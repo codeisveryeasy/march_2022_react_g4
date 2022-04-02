@@ -2,13 +2,25 @@ import React from 'react';
 
 
 class ActionButtons extends React.Component {
-    state = {  } 
+    state = { 
+        score: 99,
+        likes: parseInt(this.props.lks)
+     } 
+
+
+     addLikes=()=>{
+       this.setState({likes: this.state.likes + 1})
+     }
+
+
     render() { 
         return (
             <div>
-                <button>Likes 8</button>
+                <button onClick={this.addLikes}>Likes {this.state.likes}</button>
                 &nbsp;
-                <button>DisLikes 2</button>
+                <button>DisLikes {this.props.dlks}</button>
+                &nbsp;
+                Score: {this.state.score}
             </div>
         );
     }

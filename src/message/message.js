@@ -7,8 +7,8 @@ class Message extends React.Component {
     render() { 
         return (
             <div>
-                <p>Lorem ipsum doroth more</p>
-                <ActionButtons></ActionButtons>
+                <p>{this.props.msg}</p>
+                <ActionButtons lks={this.props.likes} dlks={this.props.dislikes}></ActionButtons>
             </div>
         );
     }
