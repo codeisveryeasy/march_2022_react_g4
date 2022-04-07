@@ -1,5 +1,6 @@
 import React from 'react';
-import MessageList from '../message/messagelist';
+import Content from '../spa/content';
+import Menu from '../spa/menu';
 
 class RootComponent extends React.Component {
     state = {}
@@ -17,7 +18,10 @@ class RootComponent extends React.Component {
                 <h1>Root Component is cool! {this.score}</h1>
                 <p>Message: {this.getMessage()}</p>
                 <div>
-                    <MessageList></MessageList>
+                  <Menu></Menu>
+                </div>
+                <div>
+                    <Content></Content>
                 </div>
             </div>
         );
