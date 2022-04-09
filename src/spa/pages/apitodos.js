@@ -1,36 +1,60 @@
 import React from 'react';
 import axios from "axios";
+import Todo from './todo';
 
 
 class APITodos extends React.Component {
-    state = {  } 
+    state = {
+        users:["omi","lie", "chi", "mia","oki", "kia", "jio"],
+        todos:[]
+    }
 
-    componentWillMount(){
+    componentWillMount() {
         console.log("Will make a call to api using axios")
         this.getTodosAll()
     }
 
-    getTodosAll=()=>{
+    getTodosAll = () => {
         //use axios to get alltodos from api
         axios.get("http://localhost:3000/alltodos/")
-            .then((response)=>{
+            .then((response) => {
                 console.log(response)
                 console.log(response.data)
-            }, (error)=>{
+                console.log(this.state.todos)
+                this.setState({
+                    todos: response.data
+                })
+                console.log(this.state.todos)
+
+            }, (error) => {
                 console.log(error)
-            
             })
     }
 
-    render() { 
+    renderFewMoreLi = () => {
+        return this.state.todos.map((u)=>{
+            console.log(u)
+            return(
+               <Todo 
+                    title={u.title}
+               >
+               </Todo>
+            )
+        })
+    }
+
+    render() {
         return (
             <div>
-                 <h1>Get list of todos from API</h1>
-                 <p>http://localhost:3000/alltodos/</p>
+                <h1>Get list of todos from API</h1>
+                <p>http://localhost:3000/alltodos/</p>
+                <ol>
+                    {this.renderFewMoreLi()}
+                </ol>
             </div>
-           
+
         );
     }
 }
- 
+
 export default APITodos;
