@@ -10,6 +10,7 @@ class Menu extends React.Component {
                 <Link to="/messagelist">Message List</Link> &nbsp;
                 <Link to="/contact">Contact</Link> &nbsp;
                 <Link to="/lifecycle">Lifecycle</Link> &nbsp;
+                <Link to="/api">Todos</Link> &nbsp;
                
             </div>
         );
