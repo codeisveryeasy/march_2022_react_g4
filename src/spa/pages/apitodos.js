@@ -43,14 +43,46 @@ class APITodos extends React.Component {
         })
     }
 
+    renderFewMoreTr=()=>{
+        return this.state.todos.map((u)=>{
+            console.log(u)
+            return(
+               <Todo 
+                    id={u.id}
+                    title={u.title}
+                    completed = {u.completed}
+                    userid={u.userId}
+               >
+               </Todo>
+            )
+        })
+    }
+
     render() {
         return (
             <div>
                 <h1>Get list of todos from API</h1>
                 <p>http://localhost:3000/alltodos/</p>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>UserId</th>
+                            <th>Todo Title</th>
+                            <th>Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         {this.renderFewMoreTr()}
+                    </tbody>
+
+                </table>
+                
+                {/*                 
                 <ol>
                     {this.renderFewMoreLi()}
-                </ol>
+                </ol> */}
+
             </div>
 
         );
