@@ -5,6 +5,7 @@ import Contact from './pages/contact';
 import Home from './pages/home';
 import Lifecycle from './pages/lifecycle';
 import MessageList from './pages/message/messagelist';
+import NewTodo from './pages/newtodo';
 
 
 class Content extends React.Component {
@@ -18,6 +19,7 @@ class Content extends React.Component {
                     <Route path='/contact' element={<Contact></Contact>}></Route>
                     <Route path='/lifecycle' element={<Lifecycle></Lifecycle>}></Route>
                     <Route path='/api' element={<APITodos></APITodos>}></Route>
+                    <Route path='/newtodo' element={<NewTodo></NewTodo>}></Route>
                 </Routes>
             </div>
         );

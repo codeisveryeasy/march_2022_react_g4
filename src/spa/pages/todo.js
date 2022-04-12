@@ -14,6 +14,11 @@ class Todo extends React.Component {
            )
        }
     }
+
+    deleteUser=()=>{
+        console.log("Delete user with id: " + this.props.id)
+        this.props.deleteId(this.props.id)
+    }
     
     render() { 
         return (
@@ -22,6 +27,12 @@ class Todo extends React.Component {
                 <td>{this.props.userid}</td>
                 <td>{this.props.title}</td>
                 <td>{this.getCompleted()}</td>
+                <td>
+                    <button onClick={this.deleteUser}>Delete</button>
+                </td>
+                <td>
+                    <button>Update</button>
+                </td>
             </tr>
         );
     }
