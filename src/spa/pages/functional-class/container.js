@@ -1,6 +1,7 @@
 import React from 'react';
 import ClassComponent from './classcomponent';
 import FunctionalComponent from './functionalcomponent';
+import UseEffectDemo from './functionaluseeffect';
 
 
 class Container extends React.Component {
@@ -13,6 +14,8 @@ class Container extends React.Component {
                 <hr></hr>
                 <h1>Functional component:</h1>
                 <FunctionalComponent></FunctionalComponent>
+                <hr></hr>
+                <UseEffectDemo></UseEffectDemo>
             </div>
         );
     }

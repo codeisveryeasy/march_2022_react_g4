@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FunctionalChild from './functionalchild';
 
 
 function FunctionalComponent(){
 
-    var score = 99
+    const [score, changeTheScore] =  useState(8)
+    const [age, updateMyAge] =  useState(35)
+
+    var amount = 99
 
     function welcome(){
-        return "Functional components are modern " + score + "% !!!!"
+        return "Functional components are modern " + amount + "% !!!!"
+    }
+
+    function updateScore(){
+        changeTheScore((s)=>{
+            console.log(s)
+            return s + 1
+        })
+    }
+
+    function changeAge(){
+        updateMyAge(a=>a+4)
+
     }
 
 
@@ -19,6 +34,14 @@ function FunctionalComponent(){
             </div>
             <div>
                 {welcome()}
+            </div>
+            <div>
+                Score: {score} &nbsp;&nbsp;
+                <button onClick={updateScore}>Change Score</button>
+            </div>
+            <div>
+                Age: {age} &nbsp;&nbsp;
+                <button onClick={changeAge}>Change Age</button>
             </div>
         </div>
     )

@@ -12,6 +12,12 @@ class ClassComponent extends React.Component {
         return "Class components are easy " + this.score + "% !!!!"
     }
 
+    changeAge=()=>{
+        this.setState({
+            age: this.state.age + 2
+        })
+    }
+
     render() { 
         return (
             <div>
@@ -22,7 +28,8 @@ class ClassComponent extends React.Component {
                 <div>
                     {this.welcome()}
                     <br></br>
-                    Age : {this.state.age}
+                    Age : {this.state.age} &nbsp;&nbsp;
+                    <button onClick={this.changeAge}>Change Age</button>
                 </div>
             </div>
         );
